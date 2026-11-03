@@ -94,5 +94,18 @@ document.querySelector('#clear').addEventListener('click', () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
   hint.hidden = false;
 });
+document.querySelector('#download').addEventListener('click', () => {
+  const exportCanvas = document.createElement('canvas');
+  exportCanvas.width = canvas.width;
+  exportCanvas.height = canvas.height;
+  const exportContext = exportCanvas.getContext('2d');
+  exportContext.fillStyle = '#fffdf7';
+  exportContext.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+  exportContext.drawImage(canvas, 0, 0);
+  const link = document.createElement('a');
+  link.download = 'canvas-corner.png';
+  link.href = exportCanvas.toDataURL('image/png');
+  link.click();
+});
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
