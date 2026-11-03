@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Corner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <div class="brand"><span class="brand-mark">✦</span>Canvas Corner</div>
+        <p>Sketch, write, and let ideas wander.</p>
+        <button id="download" class="outline-button" type="button">↓ Save PNG</button>
+      </header>
+      <section class="board-wrap" aria-label="Whiteboard">
+        <canvas id="board" aria-label="Drawing canvas"></canvas>
+        <div id="emptyHint" class="empty-hint">Pick a tool and make your first mark</div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
