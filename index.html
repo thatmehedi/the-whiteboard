@@ -20,6 +20,23 @@
         <canvas id="board" aria-label="Drawing canvas"></canvas>
         <div id="emptyHint" class="empty-hint">Pick a tool and make your first mark</div>
       </section>
+      <nav class="toolbar" aria-label="Whiteboard tools">
+        <div class="tool-group" aria-label="Tools">
+          <button class="tool active" data-tool="pen" title="Pen">✎<span>Pen</span></button>
+          <button class="tool" data-tool="eraser" title="Eraser">⌫<span>Erase</span></button>
+          <button class="tool" data-tool="text" title="Text">T<span>Text</span></button>
+        </div>
+        <div class="tool-group" aria-label="Colors">
+          <button class="swatch active" data-color="#242328" style="--swatch:#242328" aria-label="Ink black"></button>
+          <button class="swatch" data-color="#ef5e52" style="--swatch:#ef5e52" aria-label="Coral red"></button>
+          <button class="swatch" data-color="#4777d7" style="--swatch:#4777d7" aria-label="Blue"></button>
+          <button class="swatch" data-color="#39a67d" style="--swatch:#39a67d" aria-label="Green"></button>
+          <button class="swatch" data-color="#f3a834" style="--swatch:#f3a834" aria-label="Orange"></button>
+        </div>
+        <label class="size-control" for="size">Size <input id="size" type="range" min="1" max="30" value="5" /></label>
+        <button id="undo" class="icon-button" type="button" title="Undo">↶</button>
+        <button id="clear" class="icon-button danger" type="button" title="Clear board">×</button>
+      </nav>
     </main>
     <script src="app.js"></script>
   </body>
