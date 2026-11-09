@@ -83,7 +83,12 @@ document.querySelectorAll('[data-color]').forEach((button) => {
     document.querySelectorAll('[data-color]').forEach((item) => item.classList.toggle('active', item === button));
   });
 });
-document.querySelector('#size').addEventListener('input', (event) => { size = Number(event.target.value); });
+const sizeInput = document.querySelector('#size');
+const sizeValue = document.querySelector('#sizeValue');
+sizeInput.addEventListener('input', (event) => {
+  size = Number(event.target.value);
+  if (sizeValue) sizeValue.textContent = `${size}px`;
+});
 document.querySelector('#undo').addEventListener('click', () => {
   const previous = history.pop();
   if (previous) context.putImageData(previous, 0, 0);

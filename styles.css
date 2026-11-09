@@ -29,6 +29,7 @@ button { color: inherit; }
 .swatch { width: 25px; height: 25px; padding: 0; border: 2px solid transparent; border-radius: 50%; background: var(--swatch); cursor: pointer; }
 .swatch.active { outline: 2px solid var(--ink); outline-offset: 2px; }
 .size-control { display: flex; align-items: center; gap: 6px; color: #6c6660; font-family: "DM Mono", monospace; font-size: .72rem; }
+#sizeValue { min-width: 28px; font-weight: 700; color: var(--ink); }
 input[type="range"] { accent-color: var(--peach); width: 90px; }
 .icon-button { width: 34px; height: 34px; font-size: 1.45rem; line-height: 1; }
 .danger:hover { background: var(--peach); }
