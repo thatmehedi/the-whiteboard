@@ -108,7 +108,8 @@ document.querySelector('#download').addEventListener('click', () => {
   exportContext.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
   exportContext.drawImage(canvas, 0, 0);
   const link = document.createElement('a');
-  link.download = 'canvas-corner.png';
+  const dateTag = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  link.download = `canvas-corner-${dateTag}.png`;
   link.href = exportCanvas.toDataURL('image/png');
   link.click();
 });
