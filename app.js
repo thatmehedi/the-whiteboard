@@ -108,4 +108,17 @@ document.querySelector('#download').addEventListener('click', () => {
   link.click();
 });
 window.addEventListener('resize', resizeCanvas);
+window.addEventListener('keydown', (event) => {
+  if (event.target.tagName === 'INPUT') return;
+  if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'z') {
+    event.preventDefault();
+    document.querySelector('#undo').click();
+  } else if (event.key.toLowerCase() === 'p') {
+    document.querySelector('[data-tool="pen"]')?.click();
+  } else if (event.key.toLowerCase() === 'e') {
+    document.querySelector('[data-tool="eraser"]')?.click();
+  } else if (event.key.toLowerCase() === 't') {
+    document.querySelector('[data-tool="text"]')?.click();
+  }
+});
 resizeCanvas();
